@@ -4,12 +4,20 @@ on:
 jobs:
   container-test-job:
     runs-on: ubuntu-22.04
-    container:
-      image: ghcr.io/cicd-lectures/gitpod:latest
-      options: --user=root
-  dire_bonjour:
-    runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v4
-      - run: ls -l | cowsay # Liste les fichier du répertoire courant
-      - run: cat README.md | cowsay # Affiche le contenu du fichier `README.md` à la base du dépôt
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Readme
+        id: package
+        uses: juliangruber/read-file-action@v1
+        with:
+            path: ./README.md
+      - name: output the message on actions result
+        uses: Code-Hex/neo-cowsay-action@v1
+        with:
+          message: steps.package.outputs
+
+          
+
+          
+ 
