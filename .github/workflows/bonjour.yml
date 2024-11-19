@@ -2,6 +2,11 @@ name: Readme
 on:
   - push
 jobs:
+  container-test-job:
+    runs-on: ubuntu-22.04
+    container:
+      image: ghcr.io/cicd-lectures/gitpod:latest
+      options: --user=root
   dire_bonjour:
     runs-on: ubuntu-22.04
     steps:
