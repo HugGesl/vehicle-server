@@ -1,5 +1,6 @@
 ## Vehicle Server Typescript
 
+
 ### Requirements
 
 - nodejs
@@ -13,7 +14,7 @@ First start a database server
 docker run -d -e POSTGRES_USER=vehicle -e POSTGRES_PASSWORD=vehicle -e POSTGRES_DB=vehicle -p 5432:5432 postgis/postgis:16-3.4-alpine
 ```
 
-Then, in another terminal start the server
+Then, in another terminal start the server(run on port 8080)
 
 ```bash
 node dist/index.js
