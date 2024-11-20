@@ -7,15 +7,22 @@
     "build": "rm -rf ./dist && tsc",
     "start": "npm run build && node dist/index.js",
     "start-db": "docker container run -d --name vehicle-database -e POSTGRES_USER=vehicle -e POSTGRES_PASSWORD=vehicle -e POSTGRES_DB=vehicle -p 5432:5432 postgis/postgis:16-3.4-alpine",
-    "stop-db": "docker container rm -f vehicle-database"
+    "stop-db": "docker container rm -f vehicle-database",
+    "lint": "eslint ./src"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@eslint/js": "^9.15.0",
     "@types/express": "^5.0.0",
+    "@types/jest": "^29.5.14",
     "@types/node": "^22.9.1",
     "@types/pg": "^8.11.10",
-    "typescript": "^5.6.3"
+    "eslint": "^9.15.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.15.0"
   },
   "dependencies": {
     "express": "^5.0.1",
