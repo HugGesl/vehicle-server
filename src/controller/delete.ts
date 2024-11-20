@@ -6,10 +6,17 @@ interface Parameters {
 }
 
 export class DeleteVehicleController {
-  constructor(private readonly vehicleStore: VehicleStore) {}
-
+  constructor(private readonly vehicleStore: VehicleStore) {
+    
+  }
+  
   public async handle(req: Request<Parameters>, res: Response): Promise<void> {
-    res.status(500).send();
+    const id = parseInt(req.params.id);
+    const deleteRequest = {id: id};
+    await this.vehicleStore.deleteVehicle(deleteRequest);
+
+    res.status(204).send();
+    
   }
 }
 
