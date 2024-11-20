@@ -1,4 +1,4 @@
-name: Install node
+name: Build dist
 on:
   branch_protection_rule:
     types: [created, deleted]
