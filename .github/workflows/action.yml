@@ -1,6 +1,7 @@
 name: Install node
 on:
-  - push
+  branch_protection_rule:
+    types: [created, deleted]
 jobs:
   ci:
     runs-on: ubuntu-22.04
