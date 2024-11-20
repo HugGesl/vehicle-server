@@ -1,7 +1,7 @@
 name: Build dist
 on:
-  branch_protection_rule:
-    types: [created, deleted]
+  - push
+  - pull_request
 jobs:
   ci:
     runs-on: ubuntu-22.04
